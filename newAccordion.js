@@ -2,7 +2,6 @@ $(document).ready(function() {
   // Variables for desktop design
   var navbr = $(".navbr");
   var navbar = $(".navbar");
-  var item = this;
   var fit_content = $(".fit-content");
   var care_content = $(".care-content");
   var materials_content = $(".materials-content");
@@ -96,11 +95,56 @@ $(document).ready(function() {
 
   $('button').on("click", function() {
     if($(this).hasClass("fit-navbar")) {
+      if(fit_content.hasClass("hidden")) {
+        fit_content.removeClass("hidden")
+        // Highlights Active Tab
+        navbar_fit_button.addClass("navbar__button--active");
 
+        // Removes Active Tab
+        navbar_materials_button.removeClass("navbar__button--active");
+        navbar_care_button.removeClass("navbar__button--active");
+
+        // Hides Content Divs
+        care_content.addClass("hidden");
+        materials_content.addClass("hidden");
+      } else {
+        fit_content.addClass("hidden");
+        navbar_fit_button.removeClass("navbar__button--active");
+      }
     } else if ($(this).hasClass("care-navbar")) {
+      if(care_content.hasClass("hidden")) {
+        care_content.removeClass("hidden")
+        // Highlights Active Tab
+        navbar_care_button.addClass("navbar__button--active");
 
+        // Removes Active Tab
+        navbar_materials_button.removeClass("navbar__button--active ");
+        navbar_fit_button.removeClass("navbar__button--active ");
+
+        // Hides Content Divs
+        fit_content.addClass("hidden");
+        materials_content.addClass("hidden");
+      } else {
+        care_content.addClass("hidden");
+        navbar_care_button.removeClass("navbar__button--active")
+      }
     } else if ($(this).hasClass("materials-navbar")) {
-      
+      if(materials_content.hasClass("hidden")) {
+        materials_content.removeClass("hidden")
+        // Highlights Active Tab
+        navbar_materials_button.addClass("navbar__button--active");
+
+        // Removes Active Tab
+        navbar_care_button.removeClass("navbar__button--active ");
+        navbar_fit_button.removeClass("navbar__button--active ");
+
+        // Hides Content Divs
+        fit_content.addClass("hidden");
+        care_content.addClass("hidden");
+      } else {
+        materials_content.addClass("hidden");
+        navbar_materials_button.removeClass("navbar__button--active");
+      }
     }
 
   })
