@@ -1,0 +1,129 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+$full-screen: 100%;
+$base-color: white;
+* {
+    box-sizing: border-box;
+}
+
+.info {
+    width: $full-screen;
+}
+.info-nav {
+    display: none;
+}
+.content__btn {
+    width: $full-screen;
+    height: 50px;
+    background-color: $base-color;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    text-align: left;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.accordion__content {
+    font-family: sans-serif;
+    width: $full-screen;
+    text-align: center;
+}
+.materials {
+    list-style-type: none;
+    margin-left: -10%;
+}
+.materials-list {
+    display: inline-block;
+    width: 12%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 2em;
+    line-height: 20px;
+}
+.materials--font {
+    font-size: .5em;
+
+}
+.line {
+    width: 13.3%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.content__btn::after {
+    content: "+";
+    float: right;
+}
+.content__btn--active::after {
+    content: "-";
+    float: right;
+    color: black;
+}
+.bottom {
+    border-bottom: none;
+}
+.hide {
+    display: none;
+}
+
+@media all and (min-width: 644px) {
+    .info-nav {
+        display: block;
+        width: 100%;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 5%;
+    }
+    .info-nav__btn {
+        width: 23.3%;
+        height: 60px;
+        background-color: white;
+        border: 2px solid black;
+        margin-right: -1%;
+        font-size: 1.4em;
+        font-family: sans-serif;
+        letter-spacing: 2px;
+        outline: none;
+        font-weight: 500;
+    }
+    .info-nav__btn:hover {
+        background-color: black;
+        color: white;
+    }
+    .content__btn{
+        display: none;
+    }
+    .accordion__content {
+        font-size: 1.2em;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .materials {
+        width: 100%;
+        margin-left: -3%;
+    }
+    .materials-list {
+        display: inline-block;
+        width: 10%;
+        font-size: 2.2em;
+    }
+    .materials--font {
+        font-size: .5em;
+        margin-left: -10%;
+    }
+    .line {
+        width: 5%;
+        margin-top: -4%;
+    }
+
+    .content__btn--active {
+        background-color: black;
+        color: white;
+    }
+}
